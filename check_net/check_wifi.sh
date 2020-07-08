@@ -1,8 +1,8 @@
 #!/bin/bash
-# x500 wifi dev name wlp13s0
+# x500 wifi dev name wlp7s0
 fun_check_x500_wifi_status()
 {
-    dev_name=wlp13s0
+    dev_name=wlp7s0
     dis_dev_name=$(nmcli device status | awk '$2 == "wifi" && $3 == "disconnected" {print $1}'| tr "\n" " ")
     if [[ "$dis_dev_name" =~ $dev_name ]];
     then
@@ -31,7 +31,7 @@ fun_check_wifi_status()
 # check wifi ip
 fun_check_wifi_ip()
 {
-    dev_name=enp9s0
+    dev_name=wlp7s0
     
     ifconfig ${dev_name} > /dev/null 2>&1
     is_dev=$?
