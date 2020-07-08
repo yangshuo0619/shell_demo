@@ -1,0 +1,15 @@
+[Unit]
+Description=Check WIFI Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/check_wifi.sh
+ExecStop=/bin/bash kill -9 $(ps -e | awk '$4 == "check_wifi.sh" {print $1}')
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
