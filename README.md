@@ -1,5 +1,5 @@
 # shell demo
 
-## check_wifi
+## check_net
 
 ## net bridge
