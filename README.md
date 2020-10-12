@@ -10,3 +10,7 @@
 ```
 cat /sys/class/thermal/thermal_zone0/temp
 ```
+### 2、udev生效
+```
+sudo udevadm control --reload-rules && udevadm trigger 
+```
