@@ -14,3 +14,8 @@ cat /sys/class/thermal/thermal_zone0/temp
 ```
 sudo udevadm control --reload-rules && udevadm trigger 
 ```
+
+### 3、查看信息
+```
+udevadm info --query=all --name=/dev/video0
+```
