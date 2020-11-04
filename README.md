@@ -12,7 +12,7 @@ cat /sys/class/thermal/thermal_zone0/temp
 ```
 ### 2、udev生效（未生效）
 ```
-sudo udevadm control --reload-rules && udevadm trigger 
+sudo udevadm control --reload-rules && sudo udevadm trigger 
 ```
 
 ### 3、查看信息
