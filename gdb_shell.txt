@@ -1,0 +1,20 @@
+gdb -q --bath --ex "set height 0" -ex "thread apply all bt full" [可执行文件] [core文件]
+gdb -q
+解释：
+-q: 不打印gdb的版权信息
+--batch: 执行批处理，不进入交互模式
+--ex: 执行gdb命令
+
+"set height 0": 不对输出进行分页
+"thread apply all bt full": 打印所有线程堆栈
+
+
+ls -l --time-style=long-iso | grep "core-" | awk -F " " '{print $5"#"$6" "$7"#"$8}'
+
+ls -l --time-style=long-iso | grep "core-" | awk -F " " '{print $8}' | xargs sudo file | awk -F " " '{print $13}' | sed $'s/\'//g'
+
+ls -l --time-style=long-iso | grep "core-" | awk -F " " '{print $8}' | xargs sudo file | awk -F " " '{print $13" "$1}' | sed $'s/\'//g' | sed 's/\://g'
+服务安装
+sudo bash install_coredump.sh
+服务移除
+sudo bash remove_coredump.sh
